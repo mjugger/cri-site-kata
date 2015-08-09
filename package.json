@@ -1,0 +1,29 @@
+{
+  "name": "cri-site-kata",
+  "version": "1.0.0",
+  "description": "A CRI project to assess my UI developer skills",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mjugger/cri-site-kata.git"
+  },
+  "author": "Mukhtar Jugger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mjugger/cri-site-kata/issues"
+  },
+  "homepage": "https://github.com/mjugger/cri-site-kata#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-less": "^3.0.3",
+    "gulp-minify-css": "^1.2.0",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
+    "jade": "^1.11.0"
+  }
+}

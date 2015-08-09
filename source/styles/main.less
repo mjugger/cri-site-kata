@@ -1,0 +1,95 @@
+@import 'reset.less';
+@import 'grid.less';
+@import 'mixins.less';
+@import 'http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css';
+
+
+// Global Mixin Calls (Margin, Padding, etc)
+
+.generateMargin(20,bottom); // margin-bottom-(num)
+.generateMargin(20,top);    // margin-top-(num)
+.generateMargin(20,left);   // margin-left-(num)
+.generateMargin(20,right);  // margin-right-(num)
+
+.generatePadding(20,bottom); // padding-bottom-(num)
+.generatePadding(20,top);    // padding-top-(num)
+.generatePadding(20,left);   // padding-left-(num)
+.generatePadding(20,right);  // padding-right-(num)
+
+// Color Declaration
+
+@black: #000;
+@white: #fff;
+
+.black { color: @black !important; }
+.white { color: @white !important; }
+
+.blackBg { background-color: @black !important; }
+.whiteBg { background-color: @white !important; }
+
+
+//Font Size/Weight Declarations
+
+h1 { }
+h2 { }
+h3 { }
+h4 { }
+h5 { }
+h6 { }
+p  { }
+
+sup, 
+sub { font-size: 50%; line-height: 0; }
+
+ul { list-style-type: none; }
+
+.list { 
+	list-style-position: outside;
+	margin-left: 26px;
+}
+
+ul.list { list-style-type: disc; }
+
+
+.heading    { }
+.subHeading { }
+
+// Generic Type Styles
+
+.italic      { font-style: italic;        }
+.uppercase   { text-transform: uppercase; }
+.alignLeft   { text-align: left;          }
+.alignRight  { text-align: right;         }
+.alignCenter { text-align: center;        }
+
+.light       { font-weight: 200; }
+.regular     { font-weight: 400; }
+.bold        { font-weight: 700; }
+
+.noUnderline { text-decoration: none;      }
+.underline   { text-decoration: underline; }
+
+// Generic Reusable Styles
+
+.floatLeft   { float: left  !important; }
+.floatRight  { float: right !important; }
+.clear       { clear: both;             }
+.fullWidth   { max-width: 100%;         }
+.inline      { display: inline;         }
+.inlineBlock { display: inline-block;   }
+
+// Header + Navigation
+
+header { }
+
+// Homepage Styles
+
+
+
+// Interior Page Styles
+
+
+
+// Generic Media Queries
+
+

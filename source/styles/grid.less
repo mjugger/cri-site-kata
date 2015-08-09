@@ -1,0 +1,99 @@
+//Number of columns for the grid.
+@columns: 12;
+
+//How much space to the left and right of each column. In %.
+@gutterWidth: 1%;
+
+//How large is the container?
+@containerSize: 1080px;
+
+.generate(@columns,@gutterWidth);
+.generateNG(@columns,@gutterWidth);
+.generateOffset(@columns,@gutterWidth);
+
+*{ box-sizing: border-box; }
+
+.container{
+	position:relative;
+	max-width:@containerSize;
+	width:90%;
+	margin:0 auto;
+	padding: 0 20px;
+}
+
+.fullContainer{
+	position:relative;
+	width:100%;
+	margin:0 auto;
+	padding:0 20px;
+}
+
+.row{
+	width:100%;
+	clear:both;
+}
+
+.col{
+	margin-left:@gutterWidth;
+	box-sizing:border-box;
+	float:left;
+
+	&:first-child{
+		margin-left:0;
+	}
+}
+
+.container:after,
+.row:after{
+  content: "";
+  display: table;
+  clear: both; 
+}
+
+@media screen and (max-width:@containerSize){
+	.container{
+		width:100%;
+		padding-left:30px;
+		padding-right:30px;
+	}
+
+	.col{
+		width:100%;
+		float:none;
+		margin-left:0;
+	}
+}
+
+
+//Generators, don't worry about this.
+
+
+// Basic grid generator. Generates @n columns with an @g margin (gutter)
+.generate(@totalCol,@gutter,@i:1) when (@i <= @totalCol){
+	.col--@{i}{
+		width: (@i * 100% / @totalCol) - @gutter + ((@gutter / @totalCol) * @i);
+	}
+
+	.generate(@totalCol,@gutter, (@i + 1));
+}
+
+// Generates an Offset col (Padding to the left)
+.generateOffset(@totalCol,@gutter,@i:1) when (@i <= @totalCol){
+	.col--offset-@{i}{
+		padding-left: ((@i * 100% / @totalCol) - @gutter + ((@gutter / @totalCol) * @i)) + @gutter;
+	}
+
+	.generate(@totalCol,@gutter, (@i + 1));
+}
+
+// Generates a grid with @n columns and no gutter
+// Allows the user to call a 'no gutter' with a .ng class on any column. 
+.generateNG(@n,@g,@i:1) when (@i <= @n){
+	.col--@{i}.ng{
+		width:(@i * 100% / @n);
+		margin-left:0 !important;
+	}
+
+	.generateNG(@n,@g, (@i + 1));
+}
+
