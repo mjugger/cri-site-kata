@@ -3,7 +3,7 @@
 	background-size: cover;
 	position: relative;
 	width: 100%;
-	height: 785px;
+	height: 100vh;
 	justify-content:center;
 	align-items:center;
 	display: flex;
@@ -16,6 +16,7 @@
 		opacity:0;
 		-webkit-animation: showtitle 2s ease 3s forwards;
 		animation: showtitle 2s ease 3s forwards;
+		.open-sans-light;
 	}
 
 	.scroll-container {
@@ -25,14 +26,101 @@
 		text-align: center;
 		width:100%;
 		color:#ffffff;
+		.open-sans-light;
 
 		.scroll-down {
 			position:relative;
 			-webkit-animation: bounceArrow 1s ease infinite alternate;
 			animation: bounceArrow 1s ease infinite alternate;
+			font-size: 3rem;
+		}
+
+		.scroll-text {
+			font-size: 1rem;
 		}
 	}
 }
+
+.section2 {
+	background-color: #116260;
+	min-height:558px;
+	padding-top: 100px;
+
+	.circle-imgs {
+		background: url('../imgs/circles.jpg') no-repeat center center;
+		background-size: cover;
+		position:relative;
+		border:8px solid #ffffff;
+		height:271px;
+		width:264px;
+		opacity:0;
+		top:50px;
+		margin:38px auto 0 auto;
+		border-radius:200px 200px 200px 200px;
+		-webkit-border-radius:200px 200px 200px 200px;
+		.transition(none,.5s,ease-in-out);
+		transition-property:opacity,top;
+		-webkit-transition-property:opacity,top;
+
+		&.inView {
+			top:0;
+			opacity:1;
+		}
+
+		.pseudo-circle {
+				position: absolute;
+				content: '';
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				transition: opacity 0.5s ease-out;
+				border-radius:200px 200px 200px 200px;
+				-webkit-border-radius:200px 200px 200px 200px;
+				z-index: 2;
+				.transition(none,.5s,ease-in-out);
+				transition-property:opacity,filter;
+				-webkit-transition-property:opacity,-webkit-filter;
+		}
+
+		&.black-white {
+			&:after {
+				.pseudo-circle;
+			}
+			&:hover:after {
+				background: url('../imgs/circles.jpg') no-repeat center center;
+				background-size: cover;
+				filter: grayscale(100%);
+				-webkit-filter: grayscale(100%);
+			}
+		}
+
+		&.darken {
+			&:after {
+				.pseudo-circle;
+				opacity:0;
+				background-color: #000000;
+			}
+			&:hover:after {
+				opacity:0.4;
+			}
+		}
+
+		&.sepia {
+
+			&:after {
+				.pseudo-circle;
+				opacity: 0;
+				.gradient(rgba(112, 66, 20, 0.45), rgba(112, 66, 20, 0.45));
+			}
+
+			&:hover:after {
+				opacity:1;
+			}
+		}
+	}
+}
+
 @keyframes showtitle {
 	0% {opacity:0;}
 	100% {opacity:1;}
