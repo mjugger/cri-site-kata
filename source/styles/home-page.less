@@ -1,5 +1,5 @@
 .hero {
-	background: url('../imgs/header.jpeg') no-repeat center center;
+	background: url('../imgs/header.jpg') no-repeat center center;
 	background-size: cover;
 	position: relative;
 	width: 100%;
@@ -14,8 +14,8 @@
 		padding: 20px;
 		color: #ffffff;
 		opacity:0;
-		-webkit-animation: showtitle 2s ease 3s forwards;
-		animation: showtitle 2s ease 3s forwards;
+		-webkit-animation: showtitle 2s ease 1s forwards;
+		animation: showtitle 2s ease 1s forwards;
 		.open-sans-light;
 	}
 
@@ -26,12 +26,13 @@
 		text-align: center;
 		width:100%;
 		color:#ffffff;
+		padding-bottom: 50px;
 		.open-sans-light;
 
 		.scroll-down {
 			position:relative;
-			-webkit-animation: bounceArrow 1s ease infinite alternate;
-			animation: bounceArrow 1s ease infinite alternate;
+			-webkit-animation: bounceArrow .5s ease infinite alternate;
+			animation: bounceArrow .5s ease infinite alternate;
 			font-size: 3rem;
 		}
 
@@ -44,7 +45,7 @@
 .section2 {
 	background-color: #116260;
 	min-height:558px;
-	padding-top: 100px;
+	padding: 100px 0;
 
 	.circle-imgs {
 		background: url('../imgs/circles.jpg') no-repeat center center;
@@ -54,17 +55,14 @@
 		height:271px;
 		width:264px;
 		opacity:0;
-		top:50px;
 		margin:38px auto 0 auto;
 		border-radius:200px 200px 200px 200px;
 		-webkit-border-radius:200px 200px 200px 200px;
-		.transition(none,.5s,ease-in-out);
-		transition-property:opacity,top;
-		-webkit-transition-property:opacity,top;
+
 
 		&.inView {
-			top:0;
-			opacity:1;
+			-webkit-animation: bounceCircle .5s ease 1 normal forwards;
+			animation: bounceCircle .5s ease 1 normal forwards;
 		}
 
 		.pseudo-circle {
@@ -121,6 +119,10 @@
 	}
 }
 
+.section3 {
+	padding:50px 0;
+}
+
 @keyframes showtitle {
 	0% {opacity:0;}
 	100% {opacity:1;}
@@ -137,4 +139,15 @@
 @-webkit-keyframes bounceArrow {
 	0% {transform:translateY(-5px);}
 	100% {transform:translateY(10px);}
+}
+
+@keyframes bounceCircle {
+	0% {transform:translateY(100px);}
+	50% {opacity:.5;transform:translateY(-50px);}
+	100% {opacity:1;transform:translateY(0px);}
+}
+@-webkit-keyframes bounceCircle {
+	0% {transform:translateY(100px);}
+	50% {opacity:.5;transform:translateY(-50px);}
+	100% {opacity:1;transform:translateY(0px);}
 }
